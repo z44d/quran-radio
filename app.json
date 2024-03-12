@@ -1,0 +1,62 @@
+{
+    "name": "Quran Radio",
+    "description": "Quran radio 24/24 in your VC",
+    "keywords": [
+        "py-tgcalls",
+        "pyrogram"
+    ],
+    "website": "https://t.me/DevZaid",
+    "repository": "https://github.com/cv0v/quran-radio",
+    "success_url": "https://t.me/Y88F8",
+    "env": {
+        "API_ID": {
+            "description": "قم بوضع الايبي ايدي هنا",
+            "required": true,
+            "value": ""
+        },
+        "API_HASH": {
+            "description": "قم بوضع الايبي هاش",
+            "required": true,
+            "value": ""
+        },
+        "SESSION_STRING": {
+            "description": "قم بوضع كود الجلسة بايروجرام 2.0",
+            "required": false,
+            "value": ""
+        },
+        "CHAT_ID": {
+            "description": "قم بوضع ايدي قناتك",
+            "required": true,
+            "value": ""
+        },
+        "CHANNEL_USERNAMWE": {
+            "description": "قم بوضع يوزر القناة الي بيدخل منها الحساب , لازم ملكية القناة تكون مع الحساب",
+            "required": false,
+            "value": ""
+        },
+        "SPECIFIC_READER": {
+            "description": "اسم القارئ المحدد ( يجب ان يكون الاسم مطابق لقاعدة البيانات ) - اترك الحقل فارغ حتى يكون قارئ عشوائي كل مرة",
+            "required": false,
+            "value": ""
+        }
+    },
+    "addons": [],
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        },
+        {
+            "url": "heroku/nodejs"
+        },
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "eco"
+        }
+    },
+    "stack": "container"
+}
