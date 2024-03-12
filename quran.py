@@ -1,7 +1,7 @@
 from pyrogram import Client
 from pytgcalls import PyTgCalls
 from pytgcalls import idle
-from pytgcalls.types import MediaStream
+from pytgcalls.types import AudioPiped
 
 from pyrogram.raw.functions.channels import GetFullChannel
 from pyrogram.raw.functions.phone import EditGroupCallTitle
@@ -64,12 +64,12 @@ async def Call():
             if not CHANNEL_USERNAMWE:
                 await call.join_group_call(
                     CHAT_ID,
-                    MediaStream(sound_url),
+                    AudioPiped(sound_url),
                 )
             else:
                 await call.join_group_call(
                     CHAT_ID,
-                    MediaStream(sound_url),
+                    AudioPiped(sound_url),
                     join_as=await app.resolve_peer(CHANNEL_USERNAMWE)
                 )
                 channel = await app.invoke(GetFullChannel(channel=await app.resolve_peer(CHAT_ID)))
